@@ -1,7 +1,7 @@
 # CoRSP
 Design Pattern For AI Backend: Chain of Responsibility Pattern &amp; Strategy Pattern
 
-Main article [here][https://medium.com/redbus-in/design-pattern-for-ai-backend-chain-of-responsibility-pattern-strategy-pattern-77e65c877e1d]
+Main article https://medium.com/redbus-in/design-pattern-for-ai-backend-chain-of-responsibility-pattern-strategy-pattern-77e65c877e1d
 
 Run *ParseMilitaryScienceQuestions.java* 
 
