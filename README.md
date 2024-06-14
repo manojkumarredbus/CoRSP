@@ -57,3 +57,67 @@ Total time:  2.202 s
 Finished at: 2024-05-24T11:53:00+05:30
 ------------------------------------------------------------------------
 ```
+
+# Objective Driven Prompt System
+
+Design for objective driven promt system. The code is a template to generate prompts from given objective prompt. In this case **ObjectiveDrivenPromptSystem.java** shows a way to generate prompt from prompts and then verify the outcome. 
+
+```
+Prompt: Step 1: Calculate the Number of Teeth
+Given a desired gear ratio of 4 and a module of 2 mm:
+- Formula for number of teeth on the driver gear (N1): N1 = {number_of_teeth_driver}
+- Formula for number of teeth on the driven gear (N2): N2 = N1 * 4
+Calculate N1 and N2.
+Handling response for prompt ID: Q1
+Prompt: Step 2: Calculate the Module
+Given a gear with a pitch circle diameter of {pitch_circle_diameter} mm and a number of teeth of {number_of_teeth}:
+- Formula: Module (m) = {pitch_circle_diameter} / {number_of_teeth}
+Calculate the module.
+Handling response for prompt ID: Q2
+Prompt: Step 3: Calculate Addendum and Dedendum
+Given a module of 2 mm:
+- Addendum (a) = module (m)
+- Dedendum (d) = 1.25 * module (m)
+Calculate the addendum and dedendum.
+Handling response for prompt ID: Q3
+Prompt: Step 4: Calculate Bending Stress Using the Lewis Formula
+Given a face width of {face_width} mm, module of 2 mm, and a load of {load} N:
+- Lewis formula: ? = (W * P) / (F * Y * m)
+Where:
+  - ? = Bending stress
+  - W = Load ({load} N)
+  - P = Circular pitch (? * m)
+  - F = Face width ({face_width} mm)
+  - Y = Lewis form factor (depends on the number of teeth)
+Calculate the bending stress.
+Handling response for prompt ID: Q4
+Prompt: Step 5: Calculate Hertzian Contact Stress
+Given a module of 2 mm and material properties {material_properties}:
+- Formula: ?_H = sqrt[(P * (1 - ?^2) / (? * E)) * ((1 - ?1^2) / E1 + (1 - ?2^2) / E2)]
+Where:
+  - P = Load per unit length
+  - ? = Poisson's ratio
+  - E = Young's modulus
+  - ?1, ?2 = Poisson's ratio of materials 1 and 2
+  - E1, E2 = Young's modulus of materials 1 and 2
+Calculate the Hertzian contact stress.
+Handling response for prompt ID: Q5
+Checking coverage for objective: Collect data on gear tooth calculations.
+Prompt ID: Q1
+Variables: {number_of_teeth_driver=20, number_of_teeth=20, module=2, pitch_circle_diameter=40, gear_ratio=4}
+Prompt ID: Q2
+Variables: {number_of_teeth_driver=20, number_of_teeth=20, module=2, pitch_circle_diameter=40, gear_ratio=4}
+Prompt ID: Q3
+Variables: {number_of_teeth_driver=20, face_width=10, load=1000, number_of_teeth=20, module=2, pitch_circle_diameter=40, gear_ratio=4}
+Prompt ID: Q4
+Variables: {number_of_teeth_driver=20, number_of_teeth=20, module=2, material_properties=Steel, gear_ratio=4, face_width=10, load=1000, pitch_circle_diameter=40}
+Prompt ID: Q5
+Variables: {number_of_teeth_driver=20, number_of_teeth=20, module=2, material_properties=Steel, gear_ratio=4, face_width=10, load=1000, pitch_circle_diameter=40}
+All topics covered.
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  1.025 s
+Finished at: 2024-06-14T11:32:01+05:30
+------------------------------------------------------------------------
+```
